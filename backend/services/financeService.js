@@ -25,7 +25,7 @@ const createRecord = async (userId, recordData) => {
     notes: notes || ''
   });
 
-  return await getRecordById(record._id);
+  return await getRecordById(record._id, userId, 'admin');
 };
 
 /**
@@ -117,7 +117,13 @@ const getRecordById = async (recordId, userId = null, userRole = 'viewer') => {
   }
 
   // Check access (non-admin can only see their own records)
-  if (userRole !== 'admin' && record.userId._id.toString() !== userId.toString()) {
+  // After populate, userId is an object with _id, name, email
+  // Before populate, userId is just the ObjectId
+  const recordUserId = record.userId && record.userId._id 
+    ? record.userId._id.toString() 
+    : record.userId.toString();
+  
+  if (userRole !== 'admin' && recordUserId !== userId.toString()) {
     throw new Error('Access denied');
   }
 
