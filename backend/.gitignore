@@ -8,7 +8,7 @@ pnpm-debug.log*
 .env
 .env.*
 
-coverage/git 
+coverage/
 .nyc_output/
 
 dist/
