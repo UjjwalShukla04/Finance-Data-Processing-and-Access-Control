@@ -1,0 +1,42 @@
+{
+  "roles": {
+    "VIEWER": "viewer",
+    "ANALYST": "analyst",
+    "ADMIN": "admin"
+  },
+  "userStatus": {
+    "ACTIVE": "active",
+    "INACTIVE": "inactive"
+  },
+  "recordTypes": {
+    "INCOME": "income",
+    "EXPENSE": "expense"
+  },
+  "categories": {
+    "income": [
+      "salary",
+      "freelance",
+      "investment",
+      "business",
+      "rental",
+      "other_income"
+    ],
+    "expense": [
+      "housing",
+      "food",
+      "transportation",
+      "utilities",
+      "healthcare",
+      "entertainment",
+      "shopping",
+      "education",
+      "insurance",
+      "other_expense"
+    ]
+  },
+  "pagination": {
+    "DEFAULT_PAGE": 1,
+    "DEFAULT_LIMIT": 10,
+    "MAX_LIMIT": 100
+  }
+}
